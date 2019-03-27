@@ -1,0 +1,107 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**  @var $block \Magento\Checkout\Block\Cart\Grid */
+?>
+<?php $mergedCells = ($this->helper('Magento\Tax\Helper\Data')->displayCartBothPrices() ? 2 : 1); ?>
+<?= $block->getChildHtml('form_before') ?>
+<form action="<?= /* @escapeNotVerified */ $block->getUrl('checkout/cart/updatePost') ?>"
+          method="post"
+          id="form-validate"
+          data-mage-init='{"Magento_Checkout/js/action/update-shopping-cart":
+              {"validationURL" : "/checkout/cart/updateItemQty"}
+          }'
+          class="form form-cart">
+    <?= $block->getBlockHtml('formkey') ?>
+    <div class="cart table-wrapper<?= $mergedCells == 2 ? ' detailed' : '' ?>">
+        <?php if ($block->getPagerHtml()): ?>
+            <div class="cart-products-toolbar cart-products-toolbar-top toolbar" data-attribute="cart-products-toolbar-top"><?= $block->getPagerHtml() ?></div>
+        <?php endif ?>
+        <table id="shopping-cart-table"
+               class="cart items data table"
+               data-mage-init='{"shoppingCart":{"emptyCartButton": "action.clear",
+               "updateCartActionContainer": "#update_cart_action_container"}}'>
+            <caption role="heading" aria-level="2" class="table-caption"><?= /* @escapeNotVerified */ __('Shopping Cart Items') ?></caption>
+            <thead>
+                <tr>
+                    <th class="col delete" scope="col"><span><?= /* @escapeNotVerified */ __('ENTFERNT') ?></span></th>
+                    <th class="col item" scope="col"><span><?= /* @escapeNotVerified */ __('FILE') ?></span></th>
+                    <th class="col item" scope="col"><span><?= /* @escapeNotVerified */ __('PRODUKTNAME') ?></span></th>
+                    <th class="col price" scope="col"><span><?= /* @escapeNotVerified */ __('PREIS') ?></span></th>
+                    <th class="col qty" scope="col"><span><?= /* @escapeNotVerified */ __('MENGE') ?></span></th>
+                    <th class="col subtotal" scope="col"><span><?= /* @escapeNotVerified */ __('TOTAL') ?></span></th>
+                </tr>
+            </thead>
+            <?php foreach ($block->getItems() as $_item): ?>
+                <?= $block->getItemHtml($_item) ?>
+            <?php endforeach ?>
+        </table>
+        <?php if ($block->getPagerHtml()): ?>
+            <div class="cart-products-toolbar cart-products-toolbar-bottom toolbar" data-attribute="cart-products-toolbar-bottom"><?= $block->getPagerHtml() ?></div>
+        <?php endif ?>
+    </div>
+    <div class="cart main actions">
+        <?php if ($block->getContinueShoppingUrl()): ?>
+            <a class="action continue"
+               href="<?= $block->escapeUrl($block->getContinueShoppingUrl()) ?>"
+               title="<?= $block->escapeHtml(__('Continue Shopping')) ?>">
+                <span><?= /* @escapeNotVerified */ __('WEITER KAUFEN') ?></span>
+            </a>
+        <?php endif; ?>
+        <form id="discount-coupon-form"
+              action="<?= /* @escapeNotVerified */ $block->getUrl('checkout/cart/couponPost') ?>"
+              method="post"
+              data-mage-init='{"discountCode":{"couponCodeSelector": "#coupon_code",
+                                               "removeCouponSelector": "#remove-coupon",
+                                               "applyButton": "button.action.apply",
+                                               "cancelButton": "button.action.cancel"}}'>
+            <div class="fieldset coupon<?= strlen($block->getCouponCode()) ? ' applied' : '' ?>">
+                <input type="hidden" name="remove" id="remove-coupon" value="0" />
+                <div class="field">
+                    <label for="coupon_code" class="label"><span><?= /* @escapeNotVerified */ __('Gutschein:') ?></span></label>
+                    <div class="control">
+                        <input type="text" class="input-text" id="coupon_code" name="coupon_code" value="<?= $block->escapeHtml($block->getCouponCode()) ?>" placeholder="<?= $block->escapeHtml(__('Enter code')) ?>" <?php if (strlen($block->getCouponCode())): ?> disabled="disabled" <?php endif; ?> />
+                    </div>
+                </div>
+                <div class="actions-toolbar">
+                    <?php if (!strlen($block->getCouponCode())): ?>
+                        <div class="primary">
+                            <button class="action apply primary" type="button" value="<?= /* @escapeNotVerified */ __('Apply Discount') ?>">
+                                <span><?= /* @escapeNotVerified */ __('ANWENDUNG GUTSCHEIN') ?></span>
+                            </button>
+                        </div>
+                    <?php else: ?>
+                        <div class="primary">
+                            <button  type="button" class="action cancel primary" value="<?= /* @escapeNotVerified */ __('Cancel Coupon') ?>"><span><?= /* @escapeNotVerified */ __('Cancel Coupon') ?></span></button>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </form>
+        <button type="submit"
+                name="update_cart_action"
+                data-cart-empty=""
+                value="empty_cart"
+                title="<?= $block->escapeHtml(__('Clear Shopping Cart')) ?>"
+                class="action clear" id="empty_cart_button">
+            <span><?= /* @escapeNotVerified */ __('UNLOAD WARENKORB') ?></span>
+        </button>
+        <button type="submit"
+                name="update_cart_action"
+                data-cart-item-update=""
+                value="update_qty"
+                title="<?= $block->escapeHtml(__('Update Shopping Cart')) ?>"
+                class="action update">
+            <span><?= /* @escapeNotVerified */ __('UPDATE WARENKORB') ?></span>
+        </button>
+        <input type="hidden" value="" id="update_cart_action_container" data-cart-item-update=""/>
+    </div>
+</form>
+<?= $block->getChildHtml('checkout.cart.order.actions') ?>
+<?= $block->getChildHtml('shopping.cart.table.after') ?>
+

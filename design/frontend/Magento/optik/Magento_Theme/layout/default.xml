@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <!--Remove elements - header-->
+        <referenceBlock name="register-link" remove="true"/>
+        <referenceBlock name="authorization-link" remove="true"/>
+        <referenceBlock name="wish-list-link" remove="true"/>
+        <referenceBlock name="my-account-link" remove="true"/>
+        <referenceBlock name="advanced-search-link" remove="true"/>
+
+        <referenceBlock name="header" remove="true"/>
+        <referenceBlock name="view.addto.compare" remove="true"/>
+        <referenceBlock name="view.addto.wishlist" remove="true"/>
+        <referenceBlock name="minicart" remove="true"/>
+
+        <!-- Custom -->
+        <move element="page.main.title" destination="content" before="-" />
+        <move element="top.search" destination="sidebar.main" before="-"/>
+        <move element="catalog.leftnav" destination="sidebar.additional" before="-"/>
+        <!--<move element="checkout.cart.coupon" destination="checkout.cart.container" after="checkout.cart.order.actions" />-->
+
+        <referenceBlock name="checkout.cart.coupon" remove="true" />
+        <referenceBlock name="wishlist_sidebar" remove="true" />
+        <referenceBlock name="sale.reorder.sidebar" remove="true" />
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
+
+
+
+        <!--Create header description block-->
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Cms\Block\Block" name="header.block" after="logo">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header-block</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <!--Remove elements - footer-->
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="form.subscribe" remove="true"/>
+
+        <!--Create footer blocks-->
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer-content" after="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-block</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+
+    </body>
+</page>

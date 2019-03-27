@@ -1,0 +1,101 @@
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {
+    .page-title {
+        font-family:@font-family__nirmala;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #fefefe;
+        padding-bottom: 14px;
+        border-bottom: solid 1px @light-blue;
+        width: 100%;
+    }
+    .jagd {
+        margin: 0 20px 26px;
+    }
+    .jagd-product-list {
+        margin: 0 20px !important;
+        .product-item {
+            margin-bottom: 100px !important;
+
+            .product-item-info {
+                background-color: white;
+                padding: 0;
+
+                .product-image-wrapper {
+                    padding-bottom: 0 !important;
+                }
+            }
+            .product-item-details {
+                .product-item-name {
+                    text-align: center;
+                    .product-item-link {
+                        color: white;
+                        border-bottom: solid 1px @light-blue;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+// Mobile
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .breadcrumbs {
+        margin: 10px 20px;
+    }
+    .jagd-product-list {
+        .product-item {
+            height: 150px;
+            width: 48%;
+            margin-right: 4%;
+            &:nth-child(2n){
+                margin-right: 0;
+            }
+            .product-item-info {
+                .product-image-wrapper {
+                    height: 150px;
+                }
+            }
+        }
+    }
+}
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .jagd-product-list {
+        .product-item {
+            width: 28% !important;
+            height: 216px;
+            margin-right: 8%;
+            &:nth-child(3n){
+                margin-right: 0;
+            }
+            .product-item-info {
+                .product-image-wrapper {
+                    height: 216px;
+                }
+            }
+        }
+    }
+}
+
+//
+// Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+}

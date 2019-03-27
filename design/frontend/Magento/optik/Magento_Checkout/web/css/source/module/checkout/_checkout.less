@@ -1,0 +1,183 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+@checkout-wrapper__margin: @indent__base;
+@checkout-wrapper__columns: 8;
+
+@checkout-step-title__border: @border-width__base solid @color-gray80;
+@checkout-step-title__font-size: 26px;
+@checkout-step-title__font-weight: @font-weight__light;
+@checkout-step-title__padding: @indent__s;
+
+@checkout-step-title-mobile__font-size: 18px;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .checkout-onepage-success {
+    color: white;
+    .columns {
+      padding: 20px;
+      .checkout-success{
+        .actions-toolbar {
+          margin-top: 20px;
+        }
+      }
+      form {
+        margin-top: 20px;
+        .action.primary {
+          width: 200px;
+          color: white;
+          padding: 7px 17px;
+          background: @light-blue;
+        }
+      }
+    }
+  }
+  .checkout-index-index {
+    .page-title-wrapper {
+      &:extend(.abs-visually-hidden all);
+    }
+  }
+
+  .checkout-container {
+    &:extend(.abs-add-clearfix all);
+    .lib-css(margin, 38px 0 @checkout-wrapper__margin);
+    .lib-vendor-prefix-display();
+    .lib-vendor-prefix-flex-wrap(wrap);
+    justify-content: center;
+    color: #fff;
+    max-width: 1720px;
+    padding: 0 20px;
+
+    .authentication-wrapper {
+      display: none; // checkout header sign in button
+    }
+
+    .zehlung {
+      margin: 0;
+    }
+  }
+
+  .opc-wrapper {
+    .lib-css(margin, 0 0 @checkout-wrapper__margin);
+
+    .opc {
+      &:extend(.abs-reset-list all);
+
+      // first step bottom part shipping
+      .checkout-shipping-method {
+        //
+      }
+      button.action {
+        width: 200px;
+        height: 50px;
+        background: @light-blue;
+        color: #fff;
+        font-family: @font-family__nirmala;
+        font-weight: bold;
+        font-size: 18px;
+        border: 1px solid @light-blue;
+      }
+    }
+
+    .step-title {
+      font-size: 24px;
+      font-family:@font-family__nirmala;
+      font-weight: bold;
+      color: #fff;
+      border: 0;
+      padding-bottom: 30px;
+      &:extend(.abs-checkout-title all);
+    }
+
+    .step-content {
+      margin: 0 0 @indent__xl;
+
+      .form {
+        .fieldset {
+          .field {
+            .label {
+              width: 100%;
+              padding-right: 0;
+              text-align: left;
+            }
+
+            .control {
+              width: 100%;
+            }
+          }
+
+          .discount-code {
+            // coupon field hidden on second checkout step
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .checkout-index-index {
+    .nav-sections,
+    .nav-toggle {
+      display: none;
+    }
+
+    .logo {
+      margin-left: 0;
+    }
+  }
+
+  .checkout-onepage-success {
+    &:extend(.abs-add-clearfix all);
+
+    .print {
+      display: none;
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+  .opc-wrapper {
+    .step-title {
+      .lib-css(font-size, @checkout-step-title-mobile__font-size);
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .opc-wrapper {
+    &:extend(.abs-add-box-sizing-desktop-m all);
+    .lib-vendor-prefix-order(1);
+    padding-right: 100px;
+    width: 50%;
+    max-width: 600px;
+    float: left;
+  }
+
+  .checkout-onepage-success {
+    .print {
+      display: block;
+      float: right;
+      margin: 22px 0 0;
+    }
+  }
+}

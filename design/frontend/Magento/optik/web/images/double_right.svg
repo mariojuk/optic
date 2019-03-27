@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1200px"
+	 height="792px" viewBox="0 0 1200 792" enable-background="new 0 0 1200 792" xml:space="preserve">
+<g id="Left_x5F_arrow" display="none">
+	<g display="inline">
+		<g id="chevron-right_1_">
+			<polygon fill="#25A7DF" points="248.65,411 401.65,564 437.35,528.3 320.05,411 437.35,293.7 401.65,258 			"/>
+		</g>
+	</g>
+</g>
+<g id="right_x5F_arrow" display="none">
+	<g display="inline">
+		<g id="chevron-right">
+			<polygon fill="#25A7DF" points="555.35,257 519.65,292.7 636.95,410 519.65,527.3 555.35,563 708.35,410 			"/>
+		</g>
+	</g>
+</g>
+<g id="double_x5F_right">
+	<g>
+		<g>
+			<g id="chevron-right_2_">
+				<polygon fill="#25A7DF" points="556.35,258 520.65,293.7 637.95,411 520.65,528.3 556.35,564 709.35,411 				"/>
+			</g>
+		</g>
+		<g>
+			<g id="chevron-right_3_">
+				<polygon fill="#25A7DF" points="665.35,257 629.65,292.7 746.95,410 629.65,527.3 665.35,563 818.35,410 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="double_x5F_left" display="none">
+	<g display="inline">
+		<g>
+			<g id="chevron-right_4_">
+				<polygon fill="#25A7DF" points="136.65,410 289.65,563 325.35,527.3 208.05,410 325.35,292.7 289.65,257 				"/>
+			</g>
+		</g>
+		<g>
+			<g id="chevron-right_5_">
+				<polygon fill="#25A7DF" points="248.65,410 401.65,563 437.35,527.3 320.05,410 437.35,292.7 401.65,257 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

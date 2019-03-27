@@ -1,0 +1,505 @@
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+
+.blog-page .page-main {
+    padding: 0 20px;
+}
+
+.blog-page .page-title-wrapper {
+    border-bottom: solid 1px #01a9ea;
+    margin-bottom: 30px;
+}
+
+.blog-page .page-title {
+    font-family: 'Nirmala UI', serif;
+    font-size: 34px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+}
+
+/* Blog posts list */
+
+.post-list-wrapper section {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.post-list-wrapper article {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 50%;
+    box-sizing: border-box;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.post-list-wrapper article:nth-child(odd) {
+    padding-right: 25px;
+}
+
+.post-list-wrapper article:nth-child(even) {
+    padding-left: 25px;
+}
+
+.post-list-wrapper article .article-header {
+    width: 100%;
+}
+
+.post-list-wrapper article .article-header .post-title {
+    margin-top: 15px;
+}
+
+.post-list-wrapper article .article-header .post-title .post-item-link {
+    font-family: 'Nirmala UI', serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+    width: 100%;
+}
+.post-list-wrapper article .article-header .post-title .post-item-link
+
+.post-list-wrapper article .article-header .post-title .post-item-link:visited {
+    color: #fff;
+}
+
+.post-list-wrapper article .article-header .post-info {
+    font-family: 'Segoe UI', serif;
+    font-size: 10px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #01a9ea;
+}
+
+.post-list-wrapper article .article-header .post-info .label {
+    display: none;
+}
+
+.post-list-wrapper article .article-header .post-info .value::before {
+    content: '';
+    background: url('../images/calendar.png') no-repeat center;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+}
+
+.post-list-wrapper article .article-content {
+    margin: 15px 0;
+}
+
+.post-list-wrapper article .article-footer .article-read-more {
+    color: #00A7F1;
+    background: #fff;
+    width: 190px;
+    height: 40px;
+    padding: 10px 15px;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.post-list-wrapper article a:hover {
+    text-decoration: none;
+}
+.post-list-wrapper article a:visited {
+    color: #fff;
+}
+
+/* Blog sidebar */
+/* search */
+.blog-search {
+    background: #E9E9E9;
+    color: #fff;
+}
+
+.blog-search label {
+    padding: 15px;
+    background: #01a9ea;
+    font-family: 'Nirmala', serif;
+    font-size: 16px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
+.blog-search .control {
+    padding: 10px;
+    position: relative;
+}
+
+.blog-search .control input {
+    position: static;
+    padding-right: 35px;
+    font-family: 'Nirmala', serif;
+    font-size: 12px;
+    color: #01a9ea;
+    border: 1px solid #01a9ea;
+}
+
+.blog-search .control .search-icon::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 30px;
+    line-height: 30px;
+    color: #01a9ea;
+    content: '\e615';
+    font-family: 'icons-blank-theme';
+    margin: 0;
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    pointer-events: none;
+}
+
+.blog-search .actions {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.blog-search .actions .search {
+    border: 1px solid #01a9ea;
+    color: #fff;
+    font-family: 'Nirmala', serif;
+    font-size: 16px;
+    font-weight: bold;
+    background: #01a9ea;
+    width: 110px;
+    height: 44px;
+}
+
+.blog-search .actions .search::before {
+    display: none;
+}
+
+/* categories */
+.blog-page .block.block-categories {
+    background: #E9E9E9;
+    margin-top: 25px;
+}
+
+.block-categories .block-title {
+    padding: 15px;
+    background: #01a9ea;
+    font-family: 'Nirmala', serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    color: #fff;
+    margin: 0;
+}
+
+.block-categories ul.accordion {
+    margin: 0;
+    padding: 10px;
+    list-style: none none;
+}
+
+/* Blog post single */
+
+.post-view {
+    background: #122234;
+}
+
+.post-view .post-posed-date {
+    font-family: 'Segoe UI', serif;
+    font-size: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #01a9ea;
+    margin: 30px 0 20px;
+    color: #fff;
+}
+
+.post-view .post-posed-date .label {
+    display: none;
+}
+
+.post-view .post-info .dash,
+.post-view .post-info .item.post-comments {
+    display: none;
+}
+
+.post-view .post-content {
+    color: #fff;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #01a9ea;
+}
+
+.post-view .post-comments .c-title {
+    width: 345px;
+    height: 75px;
+    font-family: 'Nirmala UI', serif;
+    font-size: 28px;
+    color: #2c2c2c;
+    background: #e9e9e9;
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 30px;
+}
+
+.post-view .post-comments .c-reply {
+    border: 1px solid #e9e9e9;
+}
+
+.post-view .post-comments .c-replyform {
+    margin: 0;
+    background: #122234;
+}
+
+.post-view .post-comments .c-replyform.no-active .c-btn-hld {
+    display: block;
+}
+
+.post-view .post-comments .c-replyform .c-btn-hld {
+    background: #122234;
+    padding: 0;
+    border: 0;
+}
+
+.post-view .post-comments .c-replyform .c-btn-hld button {
+    font-family: 'Nirmala UI', serif;
+    font-size: 18px;
+    padding: 13px 15px;
+    margin-top: 30px;
+    background: #01a9ea;
+    border-bottom: 1px solid #01a9ea;
+    float: left;
+}
+
+.post-view .post-comments .c-replyform .c-btn-hld button::before {
+    display: none;
+}
+
+.post-view .post-comments .c-replyform .comment-form-wrapper {
+    padding: 30px;
+}
+
+.post-view .post-comments .c-replyform .comment-form-wrapper .hld {
+    width: 100%;
+    float: left;
+    height: 50px;
+}
+
+.post-view .post-comments .c-replyform .comment-form-wrapper .hld input::-webkit-input-placeholder,
+.post-view .post-comments .c-replyform .comment-form-wrapper .hld input:-moz-placeholder,
+.post-view .post-comments .c-replyform .comment-form-wrapper .hld input::-moz-placeholder,
+.post-view .post-comments .c-replyform .comment-form-wrapper .hld input:-ms-input-placeholder {
+    color: #e9e9e9;
+}
+
+.post-view .post-comments .c-replyform .comment-form-wrapper .hld input {
+    height: 50px;
+}
+
+.post-view .post-comments .c-replyform .comment-form-wrapper .left-hld {
+    max-width: 25%;
+    padding-right: 15px;
+}
+
+.post-view .post-comments .c-replyform .comment-form-wrapper .mid-hld {
+    max-width: 50%;
+    padding: 0 15px;
+}
+
+.post-view .post-comments .c-replyform .comment-form-wrapper .right-hld {
+    max-width: 25%;
+    padding-left: 15px;
+    padding-right: 0;
+}
+
+.post-view .post-comments .c-replyform .comment-form-wrapper .textarea-wrapper {
+    margin-top: 30px;
+}
+
+.post-view .post-comments .c-replyform .comment-form-wrapper .textarea-wrapper textarea {
+    height: 300px;
+}
+
+.post-view .c-comment {
+    border: 1px solid #e9e9e9;
+    padding: 30px;
+    margin-bottom: 0;
+}
+
+.post-view .c-coomment .c-img {
+    max-width: 110px;
+    margin-right: 20px;
+}
+
+.post-view .c-comment .c-post {
+    margin: 0;
+    position: relative;
+}
+
+.post-view .c-comment .c-post .p-name {
+    font-family: 'Segoe UI', serif;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.post-view .c-comment .c-post .p-text {
+    font-family: 'Segoe UI', serif;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 25px;
+}
+
+.post-view .c-comment .c-post .published-date {
+    font-family: 'Segoe UI', serif;
+    font-size: 10px;
+    color: #fff;
+}
+
+.post-view .c-comment .c-post .reply-action {
+    width: 170px;
+    height: 44px;
+    display: block;
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    background: #e9e9e9;
+    text-align: center;
+    font-size: 12px;
+    color: #2c2c2c;
+    padding: 13px 15px;
+}
+
+/* Homepage recent blog posts widget */
+
+.blog-widget-recent {
+    background: #17171E;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-bottom: 100px;
+}
+
+.blog-widget-recent .title {
+    font-family: 'Nirmala UI', serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #01a9ea;
+    width: 100%;
+    max-width: 1720px;
+    padding: 50px 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.blog-widget-recent .post-list.clearfix {
+    width: 100%;
+    max-width: 1720px;
+    padding: 0 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder {
+    width: 50%;
+    float: right;
+    margin: 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-wrap: wrap;
+    height: auto;
+    background: #17171E;
+    color: #aeaeae;
+    padding-left: 25px;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder:first-child {
+    float: left;
+    height: 100%;
+    padding: 0 20px 0 0;
+    border-right: 1px solid #01a9ea;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder:not(:first-child) .post-content {
+    display: none;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder:not(:first-child) .post-ftimg-hld {
+    max-width: 50%;
+    display: inline-block;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder:not(:first-child) .post-header {
+    display: inline-block;
+    max-width: 50%;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder .post-header {
+    width: 100%;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder:first-child .post-header .post-title {
+    padding: 40px 0;
+    max-width: 100%;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder:not(:first-child) .post-header .post-title {
+    padding: 20px 0;
+    max-width: 100%;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder .post-header .post-item-link {
+    font-family: 'Nirmala UI', serif;
+    font-weight: bold;
+    color: #01a9ea;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder:first-child .post-header .post-item-link {
+    font-size: 48px;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder:not(:first-child) .post-header .post-item-link {
+    font-size: 22px;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder:first-child .post-header .post-info {
+    padding: 0 0 40px 0;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder:not(:first-child) .post-header .post-info {
+    padding: 0 0 20px 0;
+}
+
+.blog-widget-recent .post-list.clearfix .post-holder:first-child .post-content .post-read-more {
+    float: left;
+    background: #01a9ea;
+    font-family: 'Nirmala UI', serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #1d1e23;
+    padding: 15px;
+    width: 260px;
+    text-align: center;
+}
